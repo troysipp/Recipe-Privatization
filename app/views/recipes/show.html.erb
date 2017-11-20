@@ -1,0 +1,28 @@
+<%= link_to "All Recipes", recipes_path %>
+
+<h2>
+  <%= @recipe.title %>
+</h2>
+  <%= link_to "(Edit)", edit_recipe_path(@recipe) %>
+  <%= link_to "(Delete)", recipe_path(@recipe), method: :delete %>
+
+<p>
+  <%= @recipe.instructions %>
+</p>
+
+<h4> Comments </h4>
+<%= link_to "(+)", new_recipe_comment_path(@recipe) %>
+
+<ul>
+  <% @recipe.comments.each do |comment| %>
+    <li class = "comment">
+      <p>
+        <%= comment.user %>
+        <%= comment.user.name %>
+      </p>
+      <p>
+        <%= comment.content %>
+      </p>
+    </li>
+  <% end %>
+</ul>

@@ -10,8 +10,16 @@ Comment.destroy_all
 Recipe.destroy_all
 User.destroy_all
 
-troy = User.create
-jackie = User.create
+troy = User.create(
+  {
+    name: "Troy Sipprelle"
+  }
+)
+jackie = User.create(
+  {
+    name: "Jackie Orr"
+  }
+)
 
 choco = Recipe.create(
    {
