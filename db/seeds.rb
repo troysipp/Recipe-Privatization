@@ -12,12 +12,14 @@ User.destroy_all
 
 troy = User.create(
   {
-    name: "Troy Sipprelle"
+    name: "Troy Sipprelle",
+    email: "troysipprelle@aol.com"
   }
 )
 jackie = User.create(
   {
-    name: "Jackie Orr"
+    name: "Jackie Orr",
+    email: "jackieorr@hotmail.com"
   }
 )
 

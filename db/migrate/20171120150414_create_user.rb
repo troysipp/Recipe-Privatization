@@ -1,9 +1,11 @@
 class CreateUser < ActiveRecord::Migration[5.1]
   def change
     create_table :users do |t|
-      t.string :name, presence: true
+      t.string :name
       t.string :display_name
       t.string :encrypted_password
+      t.string :email
+      t.string :password_digest
 
       t.timestamps
     end
