@@ -26,6 +26,7 @@ header {
   background-repeat: no-repeat;
   display: flex;
   justify-content: center;
+  background-color: black;
 }
 
 nav {
@@ -44,6 +45,10 @@ nav {
   padding: 0;
 }
 
+.title.hover {
+  color: white;
+}
+
 h1 {
   margin: 0;
 }
@@ -51,26 +56,55 @@ h1 {
 body {
   display: flex;
   flex-direction: column;
+  background-color: black;
+}
+
+.errors {
+  display: inline-block;
 }
 
 .content {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: url("https://pixabay.com/get/eb3cb50d2af1063ed1534705fb094197e571e3dc11ac104494f1c979afeab3bd/salad-2942257_1920.jpg");
+  background-repeat: no-repeat;
+  min-height: 700px;
+}
+
+.recipe {
+  padding: 20px;
+  border: 15px black solid;
+  background-color: #d7c098;
+  margin: 30px;
 }
 
 a {
   text-decoration: none;
-  color: gray;
+  color: white;
 }
 
-/*<img src="../../assets/rope.jpg" alt="">*/
+.instructions {
+  /*border: 2px solid black;*/
+  background-color: #ddd;
+  padding: 10px;
+}
 
 .comment {
-  border: 2px black solid;
+  border: 0 black solid;
   display: inline-block;
   padding: 10px;
-  background-color: #eee;
+  background-color: #ddd;
+}
+
+.author {
+  font-weight: normal;
+  font-size: 14px;
+  margin: 0;
+}
+
+.comment_body {
+  margin: 0;
 }
 
 a:hover {
@@ -80,13 +114,16 @@ a:hover {
 .flash {
   border: 1px solid black;
   padding: 1em;
-  background: #eee;
+  background: #ddd;
+  display: inline-block;
 }
 
 .alert {
   color: red;
+  display: inline-block;
 }
 
 .notice {
   color: blue;
+  display: inline-block;
 }

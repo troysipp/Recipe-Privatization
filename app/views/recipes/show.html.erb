@@ -1,27 +1,28 @@
-<%= link_to "All Recipes", recipes_path %>
+<div class="recipe">
+  <h2>
+    <%= @recipe.title %>
+    <p class="author">
+      By <%= @recipe.user.display_name %>
+    </p>
+  </h2>
 
-<h2>
-  <%= @recipe.title %>
-</h2>
-  <%= link_to "(Edit)", edit_recipe_path(@recipe) %>
-  <%= link_to "(Delete)", recipe_path(@recipe), method: :delete %>
+  <p>
+    <%= link_to "(Edit)", edit_recipe_path(@recipe) %> | <%= link_to "(Delete)", recipe_path(@recipe), method: :delete %>
+  </p>
 
-<p>
-  <%= @recipe.instructions %>
-</p>
+  <p class="instructions">
+    <%= @recipe.instructions %>
+  </p>
 
-<h4> Comments </h4>
-<%= link_to "(+)", new_recipe_comment_path(@recipe) %>
+  <h4> Comments <%= link_to "(+)", new_recipe_comment_path(@recipe) %></h4>
 
-<ul>
-  <% @recipe.comments.each do |comment| %>
-    <li class = "comment">
-      <p>
-        <%= comment.user.name %>:
-      </p>
-      <p>
-        <%= comment.content %>
-      </p>
-    </li>
-  <% end %>
-</ul>
+  <ul>
+    <% @recipe.comments.each do |comment| %>
+      <li class="comment">
+        <p class="comment_body">
+          <%= comment.user.display_name %>: <%= comment.content %>
+        </p>
+      </li>
+    <% end %>
+  </ul>
+</div>

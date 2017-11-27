@@ -8,7 +8,8 @@ class RecipesController < ApplicationController
 
   def new
     @recipe = Recipe.new
-    if @recipe.user == current_user
+    if current_user
+      @recipe.user = current_user
       redirect_to new_recipe_path(@recipe)
     else
       flash[:alert] = "Only members can submit recipes."
