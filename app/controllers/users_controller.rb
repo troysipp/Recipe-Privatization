@@ -6,7 +6,6 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    puts @user
     if @user.save
       session[:user_id] = @user.id
       redirect_to root_path, notice: "Thank you for signing up!"
@@ -17,7 +16,7 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:email, :password, :password_confirmation) #, :name, :password_digest, :display_name)
+    params.require(:user).permit(:email, :password, :password_confirmation, :name, :password_digest, :display_name)
   end
 
 end

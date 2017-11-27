@@ -1,3 +1,5 @@
+<%= link_to "All Recipes", recipes_path %>
+
 <h1>Sign Up</h1>
 
 <%= form_for @user do |f| %>
@@ -6,17 +8,20 @@
       <h2>Form is invalid</h2>
       <ul>
         <% @user.errors.full_messages.each do |message| %>
-        <% puts message %>
-        <% puts @user.email %>
-        <% puts @user.password %>
-        <% puts @user.password_digest %>
-        <% puts @user.name %>
           <li><%= message %></li>
         <% end %>
       </ul>
     </div>
   <% end %>
 
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :display_name %><br />
+    <%= f.text_field :display_name %>
+  </div>
   <div class="field">
     <%= f.label :email %><br />
     <%= f.text_field :email %>

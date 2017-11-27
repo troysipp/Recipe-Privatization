@@ -10,45 +10,47 @@ Comment.destroy_all
 Recipe.destroy_all
 User.destroy_all
 
-troy = User.create(
+users = User.create([
   {
     name: "Troy Sipprelle",
-    email: "troysipprelle@aol.com"
-  }
-)
-jackie = User.create(
+    display_name: "troysippy",
+    email: "tcsjediknight@aol.com",
+    password: "soccer",
+    password_confirmation: "soccer"
+  },
   {
     name: "Jackie Orr",
-    email: "jackieorr@hotmail.com"
+    display_name: "jso",
+    email: "jorr@hotmail.com",
+    password: "hockey",
+    password_confirmation: "hockey"
   }
-)
+])
 
-choco = Recipe.create(
+choco = users.first.recipes.create(
    {
      title: "Chocolate Chip Cookies",
-     instructions: "Measure and mix wet and dry ingredients / Add chocolate / Bake / Eat",
-     user: troy
+     instructions: "Measure and mix wet and dry ingredients / Add chocolate / Bake / Eat"
    }
 )
 
-chicko = Recipe.create(
+chicko = users.first.recipes.create(
    {
      title: "Chicken Parmesan",
-     instructions: "Pile chicken, cheese, and tomato sauce / Bake / Eat",
-     user: troy
+     instructions: "Pile chicken, cheese, and tomato sauce / Bake / Eat"
    }
 )
 
 choco.comments.create(
   {
     content: "Wow these are the best cookies ever",
-    user: jackie
+    user: users.last
   }
 )
 
 chicko.comments.create(
   {
     content: "Hmm chicken's not the thing for me",
-    user: jackie
+    user: users.last
   }
 )

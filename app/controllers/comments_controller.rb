@@ -13,7 +13,7 @@ class CommentsController < ApplicationController
 
   def create
     @recipe = Recipe.find(params[:recipe_id])
-    @recipe.comments.create #!(recipe_params.merge(user: current_user))
+    @recipe.comments.create!(recipe_params.merge(user: current_user))
     redirect_to recipe_path(@recipe)
   end
 

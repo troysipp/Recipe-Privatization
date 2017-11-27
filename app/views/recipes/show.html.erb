@@ -17,8 +17,7 @@
   <% @recipe.comments.each do |comment| %>
     <li class = "comment">
       <p>
-        <%= comment.user %>
-        <%= comment.user.name %>
+        <%= comment.user.name %>:
       </p>
       <p>
         <%= comment.content %>

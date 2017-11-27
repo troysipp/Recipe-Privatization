@@ -10,17 +10,40 @@
 
   <body>
 
-    <div class="user_actions">
-      <% if current_user %>
-        Logged in as <%= current_user.email %>.
-        <%= link_to "Log Out", logout_path %>
-      <% else %>
-        <%= link_to "Sign Up", signup_path %> or
-        <%= link_to "Log In", login_path %>
-      <% end %>
-    </div>
+    <header>
+      <h1>
+        <a href="root_path" class="title">recipEat</a>
+      </h1>
+    </header>
+    <nav>
+      <div class="user_actions">
+        <% if current_user %>
+          <% if current_user.display_name? %>
+            Logged in as <%= current_user.display_name %>.
+          <% elsif current_user.name? %>
+            Logged in as <%= current_user.name %>.
+          <% else%>
+            Logged in with <%= current_user.email %>.
+          <% end %>
+          <%= link_to "Log Out", logout_path %>
+        <% else %>
+          <%= link_to "Sign Up", signup_path %> or
+          <%= link_to "Log In", login_path %>
+        <% end %>
+      </div>
+      <%= link_to "All Recipes", recipes_path %>
+    </nav>
 
-    <%= yield %>
+    <% flash.each do |type, message| %>
+      <p class = "flash <%= type %>"><%= message %></p>
+    <% end %>
+
+
+
+    <section class="content">
+      <%= yield %>
+    </section>
+
 
   </body>
 </html>

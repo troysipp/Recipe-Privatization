@@ -13,3 +13,80 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  margin: 0;
+}
+
+header {
+  padding: 80px;
+  background: url("/assets/newrope.jpg");
+  margin: 0;
+  position: sticky;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  color: white;
+  background-color: black;
+  padding: 20px 0;
+}
+
+.title {
+  color: white;
+  font-size: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+  color: gray;
+}
+
+/*<img src="../../assets/rope.jpg" alt="">*/
+
+.comment {
+  border: 2px black solid;
+  display: inline-block;
+  padding: 10px;
+  background-color: #eee;
+}
+
+a:hover {
+  color: green;
+}
+
+.flash {
+  border: 1px solid black;
+  padding: 1em;
+  background: #eee;
+}
+
+.alert {
+  color: red;
+}
+
+.notice {
+  color: blue;
+}
