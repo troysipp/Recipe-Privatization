@@ -3,17 +3,20 @@ class CommentsController < ApplicationController
   def new
     @recipe = Recipe.find(params[:recipe_id])
     @comment = Comment.new
-    if @recipe.user == current_user
-      redirect_to new_recipe_comment_path(@recipe, @comment)
-    else
-      flash[:alert] = "Only members can comment on recipes."
-      redirect_to recipe_path(@recipe)
-    end
+    @comment.user = current_user
+
+    # if @recipe.user == current_user
+    #   redirect_to new_recipe_comment_path(@recipe, @comment)
+    # else
+    #   flash[:alert] = "Only members can comment on recipes."
+    #   redirect_to recipe_path(@recipe)
+    # end
   end
+
 
   def create
     @recipe = Recipe.find(params[:recipe_id])
-    @recipe.comments.create!(recipe_params.merge(user: current_user))
+    @recipe.comments.create!(comment_params.merge(user: current_user))
     redirect_to recipe_path(@recipe)
   end
 

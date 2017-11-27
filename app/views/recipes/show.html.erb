@@ -14,14 +14,22 @@
     <%= @recipe.instructions %>
   </p>
 
+  ------
+
   <h4> Comments <%= link_to "(+)", new_recipe_comment_path(@recipe) %></h4>
 
-  <ul>
+  <ul class="comments">
     <% @recipe.comments.each do |comment| %>
       <li class="comment">
-        <p class="comment_body">
-          <%= comment.user.display_name %>: <%= comment.content %>
-        </p>
+        <div class="comment_body">
+          <p class="commenter">
+            <%= comment.user.display_name %>: <%= comment.content %>
+          </p>
+          <p class="timestamp">
+            <%= comment.created_at %>
+          </p>
+        </div>
+
       </li>
     <% end %>
   </ul>

@@ -8,13 +8,7 @@ class RecipesController < ApplicationController
 
   def new
     @recipe = Recipe.new
-    if current_user
-      @recipe.user = current_user
-      redirect_to new_recipe_path(@recipe)
-    else
-      flash[:alert] = "Only members can submit recipes."
-      redirect_to recipes_path
-    end
+    @recipe.user = current_user
   end
 
   def create
@@ -29,7 +23,6 @@ class RecipesController < ApplicationController
   def edit
     @recipe = Recipe.find(params[:id])
     if @recipe.user == current_user
-      redirect_to recipe_path(@recipe)
     else
       flash[:alert] = "Only the member who submitted this recipe can edit it."
       redirect_to recipe_path(@recipe)

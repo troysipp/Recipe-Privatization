@@ -1,9 +1,15 @@
-<%= form_for @recipe do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title%>
+<div class="recipe">
+  <%= form_for @recipe do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title%>
 
-  <%= f.label :instructions %>
-  <%= f.text_field :instructions %>
+    <%= f.label :instructions %>
+    <%= f.text_field :instructions %>
 
-  <%= f.submit "Update" %>
-<% end %>
+    <% if params[:id] %>
+      <%= f.submit "Update" %>
+    <% else %>
+      <%= f.submit "Create" %>
+    <% end %>
+  <% end %>
+</div>
