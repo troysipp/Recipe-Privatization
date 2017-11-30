@@ -9,6 +9,15 @@
   <p>
     <%= link_to "(Edit)", edit_recipe_path(@recipe) %> | <%= link_to "(Delete)", recipe_path(@recipe), method: :delete %>
   </p>
+  <p>
+    <% if current_user %>
+      <% if @recipe.favorites.find_by(user: current_user) %>
+        <%= link_to "&hearts;".html_safe, remove_favorite_recipe_path(@recipe), method: :delete, class: "fav" %>
+      <% else %>
+        <%= link_to "&hearts;".html_safe, add_favorite_recipe_path(@recipe), method: :post, class: "no-fav" %>
+      <% end %>
+    <% end %>
+  </p>
 
   <p class="instructions">
     <%= @recipe.instructions %>

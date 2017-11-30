@@ -1,5 +1,7 @@
 class CommentsController < ApplicationController
 
+before_action :authorize, only: [:new, :create, :edit, :update, :destroy]
+
   def new
     @recipe = Recipe.find(params[:recipe_id])
     @comment = Comment.new

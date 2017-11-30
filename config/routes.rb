@@ -7,10 +7,19 @@ Rails.application.routes.draw do
   get 'login', to: 'sessions#new', as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
 
-  resources :users
+  resources :users do
+    member do
+      get 'favorites'
+    end
+  end
+
   resources :sessions
 
   resources :recipes do
+    member do
+      post 'add_favorite'
+      delete 'remove_favorite'
+    end
     resources :comments
   end
 

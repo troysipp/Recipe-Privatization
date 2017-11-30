@@ -1,0 +1,14 @@
+<div class="template">
+  <h2>
+  Your Favorite Recipes
+  </h2>
+  <%= link_to "Explore More Recipes!", recipes_path %>
+
+  <ul class = "recipes">
+    <% @favorites.each do |favorite| %>
+      <li>
+        <%= link_to favorite.recipe.title, recipe_path(favorite.recipe_id) %>
+      </li>
+    <% end %>
+  </ul>
+</div>

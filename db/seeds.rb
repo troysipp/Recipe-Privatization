@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Comment.destroy_all
+Favorite.destroy_all
 Recipe.destroy_all
 User.destroy_all
 

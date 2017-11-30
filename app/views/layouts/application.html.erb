@@ -17,7 +17,12 @@
       </h1>
     </header>
     <nav>
-      <%= link_to "All Recipes", recipes_path %>
+      <div>
+        <%= link_to "All Recipes", recipes_path %>
+        <% if current_user%>
+        | <%= link_to "Favorite Recipes", favorites_user_path(current_user) %>
+        <% end %>
+      </div>
       <div class="user_actions">
         <% if current_user %>
           <% if current_user.display_name? %>
