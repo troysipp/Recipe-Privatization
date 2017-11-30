@@ -1,24 +1,20 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This site is meant as a handy location to find and store recipes that you or
+another user posted.
 
-Things you may want to cover:
+I built this site using Ruby, version 2.4.1p111, and Rails, version 5.1.4. It
+incorporates the languages CSS and HTML as well as many gems. In particular, the
+user authentication is built from scratch but incorporates the gem 'bcrypt',
+version 3.1.7, which handles the hashing and secure storing of user passwords.
 
-* Ruby version
+The site could be taken further by incorporating the abilities to make recipes
+private and add friends with whom to share private recipes as well as sign-ins
+from social identity providers like Google and Facebook.
 
-* System dependencies
+The site is live on Heroku: https://recipe-eat.herokuapp.com/
 
-* Configuration
+A screencast of the site functionality is hosted by Youtube:
+https://youtu.be/B8GZInVl54Y
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+I would also appreciate any contributions to the repo!
