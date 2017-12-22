@@ -5,6 +5,8 @@
     <div class="field">
       <%= label_tag :email %><br />
       <%= text_field_tag :email, params[:email] %>
+      <!-- Is params[:email] ever going to be defined to prefill the value of the generated
+      input here? -->
     </div>
     <div class="field">
       <%= label_tag :password %><br />

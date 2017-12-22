@@ -10,3 +10,7 @@ class FavoritesController < ApplicationController
   end
 
 end
+
+# I dont think this controller is ever being accessed. If it is unused, clear
+# it out of the production branch. Alternatively, you could modify your member routes
+# in `routes.rb` to point to this controller instead.

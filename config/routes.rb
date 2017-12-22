@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   get 'login', to: 'sessions#new', as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
 
+  # Nice job setting up your own authentication routes 
+
   resources :users do
     member do
       get 'favorites'
