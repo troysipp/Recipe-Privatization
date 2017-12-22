@@ -7,6 +7,8 @@ class SessionsController < ApplicationController
     user = User.find_by_email(params[:email])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
+      # For added security down the road, you may want to encrypt the user_id before
+      # putting it in session storage (check out `bcrypt`)
       redirect_to root_url, notice: "Logged in!"
     else
       flash.now.alert = "Email or password is invalid"
@@ -20,3 +22,5 @@ class SessionsController < ApplicationController
   end
 
 end
+
+# Great job hand-rolling authentication
